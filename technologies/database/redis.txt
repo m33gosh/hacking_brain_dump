@@ -1,0 +1,22 @@
+REDIS
+TCP 6379
+Description: In memory database
+Program Used for interaction: redis-cli
+Example unauthenticated connection command: redis-cli -h 10.10.20.3
+
+Commands to pull information from database
+
+info - pulls database information including version, os, uptime, cpu, memory, keyspace (keys in the database)
+
+select - used to select a desired database
+
+keys * - used to obtain all the keys in the database
+10.129.133.254:6379> keys *
+1) "flag"
+2) "stor"
+3) "temp"
+4) "numb"
+
+get flag - used to get the value of a key
+10.129.133.254:6379> get flag
+"03e1d2b376c37ab3f5319922053953eb"
