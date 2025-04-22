@@ -1,0 +1,6 @@
+xFreeRDP
+
+Command examples:
+xfreerdp  +compression +clipboard /dynamic-resolution +toggle-fullscreen /cert-ignore /bpp:8  /u:explosion.htb\administrator  /v:10.129.229.152
+
+xfreerdp  +compression +clipboard /dynamic-resolution +toggle-fullscreen /cert-ignore /bpp:8  /u:administrator  /v:10.129.229.152
