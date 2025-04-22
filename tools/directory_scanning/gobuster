@@ -1,0 +1,7 @@
+GoBuster
+website: https://github.com/OJ/gobuster
+
+Command Examples:
+gobuster vhost -u http://10.10.11.11 -w /home/m33gosh/Documents/shared_tools/wordlists/subdomains-top1million-110000.txt -v --append-domain -domain board.htb
+
+gobuster dir -u http://10.129.134.6 -x php -w /home/m33gosh/Documents/shared_tools/wordlists/subdomains-top1million-110000.txt  
