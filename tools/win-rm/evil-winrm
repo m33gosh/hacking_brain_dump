@@ -1,0 +1,7 @@
+WinRm
+TCP 5985
+
+On a linux box, you can use evil-winrm to connect to a server listining on TCP 5985 if you have valid credentials.
+
+Command example
+evil-winrm -i 10.129.95.234 -u 'administrator'
